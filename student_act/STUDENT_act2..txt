@@ -1,0 +1,30 @@
+
+# create a transaction table with fields for amount_float and amount_decimal(10,2)
+# insert values like 1234.5678 and observe how they are stored
+# query and compare the stored values to understand rounding behavior 
+
+
+# Create a table for FLOAT and DECIMAL 
+-- CREATE TABLE tran (
+--     transaction_id INT AUTO_INCREMENT PRIMARY KEY, 
+--     amount_float FLOAT,                             
+--     amount_decimal DECIMAL(10,2)                  
+-- );
+
+
+
+# Insert test values into both FLOAT and DECIMAL columns 
+INSERT INTO tran (amount_float, amount_decimal)
+VALUES 
+    (1234.5678, 1234.5678),  
+    (9876.54321, 9876.54321), 
+    (100.1234, 100.1234),    
+    (0.99999, 0.99999);     
+
+-- compare how FLOAT and DECIMAL values are stored and rounded
+SELECT 
+    transaction_id,          
+    amount_float AS float_value, 
+    amount_decimal AS decimal_value 
+FROM 
+    tran;

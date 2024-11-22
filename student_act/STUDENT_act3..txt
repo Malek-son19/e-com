@@ -1,0 +1,26 @@
+# create a products table 
+
+-- CREATE TABLE product(
+-- ven_id INT AUTO_INCREMENT PRIMARY KEY,
+-- ven_name VARCHAR(100),
+-- price DECIMAL,
+-- prod_num TINYINT
+-- );
+
+-- Insert sample data into the products table
+INSERT INTO products (ven_id, ven_name, price, prod_num)
+VALUES 
+    ('Laptop', 799.99, 25),     
+    ('Smartphone', 599.49, 50), 
+    ('Tablet', 299.99, 5),     
+    ('Monitor', 199.99, 15),    
+    ('Keyboard', 49.99, 100),   
+    ('Headphones', 89.95, 60), 
+    ('Printer', 129.99, 10),    
+    ('Gaming Console', 499.00, 20), 
+    ('Router', 69.99, 7),      
+    ('Webcam', 39.99, 3);     
+SELECT ven_name 
+FROM products 
+WHERE prod_num < 10;
+

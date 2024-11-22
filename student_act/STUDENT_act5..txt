@@ -1,0 +1,17 @@
+-- CREATE TABLE users(
+-- username_char CHAR (10),
+-- username_varchar VARCHAR(10)
+-- );
+
+INSERT INTO users (username_char, username_varchar)
+VALUES
+    ('john_doe  ', 'johnny'),   
+    ('alice_smith', 'alice23'),
+    ('bob_1987   ', 'bobby'),
+    ('charlie_99', 'charles'),
+    ('david_abc  ', 'davido'),
+    ('eve_1234   ', 'evette'),
+    ('george_56 ', 'georgie'),
+    ('hannah_42', 'hanna2024'),
+    ('ian_black  ', 'ian123'),
+    ('julia_purple', 'jules');

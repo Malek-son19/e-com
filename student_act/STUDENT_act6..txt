@@ -1,0 +1,20 @@
+-- CREATE TABLE settings(
+-- user_id INT,
+-- preferences JSON
+-- );
+
+
+INSERT INTO settings (user_id, preferences)
+VALUES
+    (1, '{"theme": "dark", "notifications": true, "language": "en", "location": "USA"}'),
+    (2, '{"theme": "light", "notifications": false, "language": "es", "location": "Spain"}'),
+    (3, '{"theme": "dark", "notifications": true, "language": "fr", "location": "France"}'),
+    (4, '{"theme": "light", "notifications": true, "language": "de", "location": "Germany"}'),
+    (5, '{"theme": "dark", "notifications": false, "language": "it", "location": "Italy"}'),
+    (6, '{"theme": "dark", "notifications": true, "language": "pt", "location": "Portugal"}'),
+    (7, '{"theme": "light", "notifications": false, "language": "ru", "location": "Russia"}'),
+    (8, '{"theme": "light", "notifications": true, "language": "zh", "location": "China"}'),
+    (9, '{"theme": "dark", "notifications": true, "language": "ja", "location": "Japan"}'),
+    (10, '{"theme": "light", "notifications": false, "language": "ko", "location": "South Korea"}');
+
+SELECT user_id, preferences FROM settings WHERE JSON_UNQUOTE(JSON_EXTRACT(preferences, '$.notifications')) = 'false';
