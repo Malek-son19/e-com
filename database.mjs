@@ -1,18 +1,16 @@
-// Import required packages
+// Import the packages
 import dotenv from 'dotenv';
 import { Sequelize, DataTypes } from 'sequelize';
 
-// Load environment variables
 dotenv.config();
-
+console.log("DEBUGGING::process.env", process.env);
 // Initialize Sequelize instance using environment variables
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  dialect: 'mysql', // Adjust as needed
+  dialect: 'mysql'
 });
 
-// Define a data model
+
 const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
@@ -20,7 +18,7 @@ const User = sequelize.define('User', {
     autoIncrement: true,
   },
   name: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING, 
     allowNull: false,
   },
   email: {
@@ -40,7 +38,7 @@ const User = sequelize.define('User', {
   timestamps: true,
 });
 
-// Test the database connection
+// Testing the database connection
 const testConnection = async () => {
   try {
     await sequelize.authenticate();
@@ -50,7 +48,7 @@ const testConnection = async () => {
     await sequelize.sync({ alter: true });
     console.log('Database synced successfully.');
 
-    // Create a test user (optional)
+    //tester user 
     const testUser = await User.create({
       name: 'John Doe',
       email: 'john.doe@example.com',

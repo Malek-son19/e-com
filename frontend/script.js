@@ -1,7 +1,7 @@
 // API URL
 const API_URL = 'http://localhost:5000/api';
 
-// Function to fetch customers from database
+
 async function fetchCustomers() {
     try {
         const response = await fetch(`${API_URL}/customers`);
@@ -14,7 +14,7 @@ async function fetchCustomers() {
     }
 }
 
-// Function to display customers and their orders
+//  display customers and their orders
 function displayCustomers(customers) {
     const container = document.getElementById('customersContainer');
     container.innerHTML = '';
@@ -77,7 +77,7 @@ async function deleteCustomer(id) {
     }
 }
 
-// Function to calculate total spent by customer
+//  calculate total spent by customer
 function calculateTotal(orders) {
     return orders.reduce((total, order) => total + order.price, 0).toFixed(2);
 }
